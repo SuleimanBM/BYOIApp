@@ -23,10 +23,10 @@ export default function TabLayout() {
         }}
       />
       <Stack.Screen
-        name="(home)"
+        name="explore"
         options={{
           title: 'Explore',
-          animation: "fade_from_bottom",
+          
         }}
       />
     </Stack>
