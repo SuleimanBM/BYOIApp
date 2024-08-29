@@ -17,16 +17,16 @@ export default function TabLayout() {
       <Stack.Screen
         name="index"
         options={{
-          
-          title: 'Home',
+           title: 'Home',
+           animation: "slide_from_left",
           
         }}
       />
       <Stack.Screen
-        name="explore"
+        name="jobBoard"
         options={{
           title: 'Explore',
-          
+          animation: "slide_from_right",
         }}
       />
     </Stack>

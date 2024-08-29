@@ -10,7 +10,7 @@ import Profile from "../../../assets/svgs/profile"
 import Jobboard from "../../../assets/svgs/jobboard"
 import Alumini from "../../../assets/svgs/alumini"
 import Arrow from "../../../assets/svgs/arrow"
-import Rectangle1 from "../../../assets/svgs/rectangle1"
+
 import Play from "../../../assets/svgs/play"
 import Group from "../../../assets/svgs/group"
 
@@ -326,7 +326,7 @@ const handlePress = () => {
                 
              
                 <View style={{alignSelf: "center"}}>
-                    <Rectangle1  />
+                    
                 </View>
                 <View >
                 <View>
@@ -356,7 +356,7 @@ const handlePress = () => {
                 
              
                 <View style={{alignSelf: "center"}}>
-                    <Rectangle1  style={{ width: '100%', height: '100%' }} />
+                    
                 </View>
                 <View >
                 <View>
@@ -386,7 +386,7 @@ const handlePress = () => {
                 
              
                 <View style={{alignSelf: "center"}}>
-                    <Rectangle1 />
+                    
                 </View>
                 <View >
                 <View>
