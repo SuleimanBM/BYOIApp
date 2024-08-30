@@ -1,13 +1,14 @@
 import { Stack } from 'expo-router';
-import React from 'react';
-
+import React, { useContext,useState } from 'react';
 import { useColorScheme } from '@/hooks/useColorScheme';
 
+export const Context = React.createContext<any>(null);
 export default function TabLayout() {
   const colorScheme = useColorScheme();
-
+  const [home, setHome] = useState(true);
   return (
-    <Stack
+    <Context.Provider value={[home,setHome]}>
+      <Stack
       screenOptions={{
         
         headerShown: false,
@@ -30,5 +31,7 @@ export default function TabLayout() {
         }}
       />
     </Stack>
+    </Context.Provider>
+    
   );
 }

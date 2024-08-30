@@ -1,6 +1,6 @@
 import { View, Text, Pressable, ScrollView,KeyboardAvoidingView,Image, TextInput, Keyboard } from 'react-native'
 import { KeyboardAwareScrollView } from "react-native-keyboard-controller";
-import React, { useState } from 'react'
+import React, { useState,useContext } from 'react'
 import { router } from 'expo-router';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useThemeColor } from '@/hooks/useThemeColor';
@@ -13,10 +13,14 @@ import Alumini from "../../../assets/svgs/alumini"
 import Search from "../../../assets/svgs/search"
 import Tick from "../../../assets/svgs/tick"
 import Nhyira from "../../../assets/svgs/nhyira.js"
+import { Context } from './_layout';
+
 
 const jobBoard = () => {
      const color = useThemeColor();
     const [search, setSearch] = useState("")
+    const [home, setHome] = useContext(Context)
+
 
   const styles = ScaledSheet.create({
   Container:{
@@ -165,6 +169,12 @@ const jobBoard = () => {
     flexDirection: "row",
     justifyContent: "space-around",
   },
+   bottonTop:{
+    backgroundColor: color.background,
+    borderRadius: scale(20),
+    paddingHorizontal: scale(15),
+    paddingVertical: scale(7),
+  },
     hiveButton: {
     
     padding: "10@s",
@@ -221,12 +231,12 @@ const handlePress = () => {
             </View>
         </View>
         <View style={styles.container12}>
-            <View>
+            <Pressable style={styles.bottonTop} onPress={()=> {router.replace("./")}}>
                 <Jobboard />
-            </View>
-            <View>
+            </Pressable >
+            <Pressable style={{backgroundColor: ""}}  onPress={()=> {router.push("./alumni"),setHome(false)}}>
                 <Alumini />
-            </View> 
+            </Pressable> 
         </View>
       </View>
       <View style={styles.container2}>

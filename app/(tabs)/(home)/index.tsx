@@ -1,23 +1,23 @@
 import { View, Text, Pressable, ScrollView,TouchableOpacity,Image } from 'react-native'
-import React from 'react'
+import React,{useContext} from 'react'
 import { router } from 'expo-router';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useThemeColor } from '@/hooks/useThemeColor';
-import { ScaledSheet } from 'react-native-size-matters';
+import { ScaledSheet,scale } from 'react-native-size-matters';
 import { LinearGradient } from 'expo-linear-gradient';
 import MaskedView from '@react-native-masked-view/masked-view';
 import Profile from "../../../assets/svgs/profile"
 import Jobboard from "../../../assets/svgs/jobboard"
 import Alumini from "../../../assets/svgs/alumini"
 import Arrow from "../../../assets/svgs/arrow"
-
 import Play from "../../../assets/svgs/play"
 import Group from "../../../assets/svgs/group"
-
+import { Context } from './_layout';
+import Rectangle from "../../../assets/svgs/rectangle1"
 
 const index = () => {
      const color = useThemeColor();
-
+     const [home, setHome] = useContext(Context)
 
   const styles = ScaledSheet.create({
   Container:{
@@ -211,6 +211,12 @@ const index = () => {
     flexDirection: "row",
     justifyContent: "space-around",
   },
+  bottonTop:{
+    backgroundColor: color.background,
+    borderRadius: scale(20),
+    paddingHorizontal: scale(15),
+    paddingVertical: scale(7),
+  },
     hiveButton: {
     backgroundColor: color.hiveB,
     padding: "10@s",
@@ -264,12 +270,12 @@ const handlePress = () => {
             </View>
         </View>
         <View style={styles.container12}>
-            <View>
+            <Pressable style={styles.bottonTop} >
                 <Jobboard />
-            </View>
-            <View>
+            </Pressable>
+            <Pressable style={{backgroundColor: ""}}  onPress={()=> {router.navigate("./alumni"),setHome(false)}}>
                 <Alumini />
-            </View> 
+            </Pressable> 
         </View>
       </View>
       <View style={styles.container2}>
@@ -326,7 +332,7 @@ const handlePress = () => {
                 
              
                 <View style={{alignSelf: "center"}}>
-                    
+                    <Rectangle />
                 </View>
                 <View >
                 <View>
@@ -356,7 +362,7 @@ const handlePress = () => {
                 
              
                 <View style={{alignSelf: "center"}}>
-                    
+                    <Rectangle />
                 </View>
                 <View >
                 <View>
@@ -380,13 +386,9 @@ const handlePress = () => {
               
             </TouchableOpacity>
             <TouchableOpacity
-              style={styles.Group12}
-              
-            >
-                
-             
+              style={styles.Group12} >
                 <View style={{alignSelf: "center"}}>
-                    
+                  <Rectangle />  
                 </View>
                 <View >
                 <View>
