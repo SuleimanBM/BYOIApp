@@ -12,12 +12,11 @@ import Alumini from "../../../assets/svgs/alumini"
 import Arrow from "../../../assets/svgs/arrow"
 import Play from "../../../assets/svgs/play"
 import Group from "../../../assets/svgs/group"
-import { Context } from './_layout';
+
 import Rectangle from "../../../assets/svgs/rectangle1"
 
 const index = () => {
      const color = useThemeColor();
-     const [home, setHome] = useContext(Context)
 
   const styles = ScaledSheet.create({
   Container:{
@@ -273,7 +272,7 @@ const handlePress = () => {
             <Pressable style={styles.bottonTop} >
                 <Jobboard />
             </Pressable>
-            <Pressable style={{backgroundColor: ""}}  onPress={()=> {router.navigate("./alumni"),setHome(false)}}>
+            <Pressable onPress={()=> {router.push("./alumni")}} >
                 <Alumini />
             </Pressable> 
         </View>
@@ -327,7 +326,7 @@ const handlePress = () => {
             <View style={styles.More}>
             <TouchableOpacity
               style={styles.Group12}
-              
+              onPress={()=>router.push("./courseLessons")}
             >
                 
              

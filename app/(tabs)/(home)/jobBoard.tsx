@@ -13,13 +13,11 @@ import Alumini from "../../../assets/svgs/alumini"
 import Search from "../../../assets/svgs/search"
 import Tick from "../../../assets/svgs/tick"
 import Nhyira from "../../../assets/svgs/nhyira.js"
-import { Context } from './_layout';
 
 
 const jobBoard = () => {
      const color = useThemeColor();
     const [search, setSearch] = useState("")
-    const [home, setHome] = useContext(Context)
 
 
   const styles = ScaledSheet.create({
@@ -234,7 +232,7 @@ const handlePress = () => {
             <Pressable style={styles.bottonTop} onPress={()=> {router.replace("./")}}>
                 <Jobboard />
             </Pressable >
-            <Pressable style={{backgroundColor: ""}}  onPress={()=> {router.push("./alumni"),setHome(false)}}>
+            <Pressable style={{backgroundColor: ""}}  onPress={()=> {router.push("./alumni")}}>
                 <Alumini />
             </Pressable> 
         </View>

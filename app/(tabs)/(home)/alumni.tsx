@@ -1,24 +1,20 @@
-import { View, Text, Pressable, ScrollView,KeyboardAvoidingView,Image, TextInput, Keyboard } from 'react-native'
-import { KeyboardAwareScrollView } from "react-native-keyboard-controller";
+import { View, Text, Pressable, ScrollView,Image, TextInput, } from 'react-native'
 import React, { useState,useContext } from 'react'
 import { router } from 'expo-router';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useThemeColor } from '@/hooks/useThemeColor';
 import { ScaledSheet,scale } from 'react-native-size-matters';
-import { LinearGradient } from 'expo-linear-gradient';
-import MaskedView from '@react-native-masked-view/masked-view';
 import Profile from "../../../assets/svgs/profile"
 import Jobboard from "../../../assets/svgs/jobboard"
 import Alumini from "../../../assets/svgs/alumini"
 import Search from "../../../assets/svgs/search"
 import Dropdown from "../../../assets/svgs/dropdown"
-import { Context } from './_layout';
 import Collapsible from "react-native-collapsible";
 
 const alumni= () => {
      const color = useThemeColor();
     const [search, setSearch] = useState("")
-    const [home,setHome] = useContext(Context)
+   
       // State to manage the collapsed state of each item
   const [collapsed, setCollapsed] = useState<{ [key: number]: boolean }>({});
 
@@ -251,7 +247,7 @@ const handlePress = () => {
             <Pressable style={{backgroundColor: ""}} onPress={()=> {router.replace("./")}}>
                 <Jobboard />
             </Pressable >
-            <Pressable style={styles.bottonTop}  onPress={()=> {router.replace("./alumni"),setHome(false)}}>
+            <Pressable style={styles.bottonTop}  onPress={()=> {router.replace("./alumni")}}>
                 <Alumini />
             </Pressable> 
         </View>
